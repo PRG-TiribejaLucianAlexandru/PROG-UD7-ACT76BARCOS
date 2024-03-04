@@ -1,4 +1,4 @@
-package prog.ud7.act76barcos;
+package prog.ud7.act76barcos.cualidadesBarcos;
 
 import java.util.StringTokenizer;
 

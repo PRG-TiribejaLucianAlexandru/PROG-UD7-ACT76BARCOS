@@ -4,6 +4,8 @@
  */
 package prog.ud7.act76barcos;
 
+import prog.ud7.act76barcos.cualidadesBarcos.TipoBarco;
+import prog.ud7.act76barcos.cualidadesBarcos.Data;
 import java.util.Arrays;
 
 /**
@@ -70,8 +72,8 @@ public class BarcoDeGuerra extends Barco {
     }
 
     @Override
-    public void realizarMantenimiento() {
-        super.horasMantenimiento += 300;
+    public int getNumHorasMantenimiento() {
+        return 200;
     }
 
     public void aumentarTripulantes(int aumento) {
@@ -86,30 +88,29 @@ public class BarcoDeGuerra extends Barco {
         this.tripulacionMaxima += aumento;
     }
 
-   public void anyadirArmamento(String[] armamentoNuevo) {
-    String[] armamentoActualizado = new String[this.armamento.length + armamentoNuevo.length];
-    for (int i = 0; i < this.armamento.length; i++) {
-        armamentoActualizado[i] = this.armamento[i];
-    }
+    public void anyadirArmamento(String[] armamentoNuevo) {
+        String[] armamentoActualizado = new String[this.armamento.length + armamentoNuevo.length];
+        for (int i = 0; i < this.armamento.length; i++) {
+            armamentoActualizado[i] = this.armamento[i];
+        }
 
-    int indice = this.armamento.length;
+        int indice = this.armamento.length;
 
-    for (int i = 0; i < armamentoNuevo.length; i++) {
-        boolean existe = false;
-        for (int j = 0; j < armamentoActualizado.length; j++) {
-            if (armamentoNuevo[i].equals(armamentoActualizado[j])) {
-                existe = true;
-                break;
+        for (int i = 0; i < armamentoNuevo.length; i++) {
+            boolean existe = false;
+            for (int j = 0; j < armamentoActualizado.length; j++) {
+                if (armamentoNuevo[i].equals(armamentoActualizado[j])) {
+                    existe = true;
+                    break;
+                }
+            }
+            if (!existe) {
+                armamentoActualizado[indice++] = armamentoNuevo[i];
             }
         }
-        if (!existe) {
-            armamentoActualizado[indice++] = armamentoNuevo[i];
-        }
+
+        this.armamento = Arrays.copyOf(armamentoActualizado, indice);
     }
-
-    this.armamento = Arrays.copyOf(armamentoActualizado, indice);
-}
-
 
     @Override
     public String toString() {
@@ -122,6 +123,11 @@ public class BarcoDeGuerra extends Barco {
 
     public int getTripulacionActual() {
         return tripulacionActual;
+    }
+
+    @Override
+    public double getCostoMantenimiento() {
+        return 6.0;
     }
 
 }

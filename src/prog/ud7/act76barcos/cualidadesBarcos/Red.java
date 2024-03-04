@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package prog.ud7.act76barcos;
+package prog.ud7.act76barcos.cualidadesBarcos;
 
 /**
  *
  * @author batoi
  */
 public class Red {
-    protected enum Tamano {
+    public enum Tamano {
         PEQUENA, MEDIANA, GRANDE;
         
         @Override
@@ -27,7 +27,7 @@ public class Red {
         }
     }
     
-    protected enum Material {
+    public enum Material {
         POLIAMIDA, POLIESTER, POLIETILENO; 
         
         @Override
@@ -45,7 +45,7 @@ public class Red {
         }
     }
     
-    protected enum Tipo {
+    public enum Tipo {
         PESCA_SPINNING, SUBMARINA, CARPFISHING;
         
         @Override

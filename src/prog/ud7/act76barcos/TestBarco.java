@@ -4,6 +4,9 @@
  */
 package prog.ud7.act76barcos;
 
+import prog.ud7.act76barcos.cualidadesBarcos.Red;
+import prog.ud7.act76barcos.cualidadesBarcos.Data;
+
 /**
  *
  * @author batoi

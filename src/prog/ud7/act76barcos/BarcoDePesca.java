@@ -4,6 +4,9 @@
  */
 package prog.ud7.act76barcos;
 
+import prog.ud7.act76barcos.cualidadesBarcos.TipoBarco;
+import prog.ud7.act76barcos.cualidadesBarcos.Red;
+import prog.ud7.act76barcos.cualidadesBarcos.Data;
 import java.util.Arrays;
 
 /**
@@ -28,10 +31,6 @@ public class BarcoDePesca extends Barco {
         return super.toString() + ", redes: " + Arrays.toString(this.redes) + ", porcentaje de éxito en captura: " + this.porcentajeCaptura;
     }
     
-    @Override
-    public void realizarMantenimiento() {
-        super.horasMantenimiento += 400;
-    }
 
     public void anyadirNuevaRed(Red red) {
         String[] nuevaRedes = new String[this.redes.length + 1];
@@ -46,5 +45,15 @@ public class BarcoDePesca extends Barco {
                 this.redes[i] = null;
             }
         }
+    }
+    
+    @Override
+    public double getCostoMantenimiento() {
+        return 4.0;
+    }
+    
+    @Override
+    public int getNumHorasMantenimiento() {
+        return 200;
     }
 }
