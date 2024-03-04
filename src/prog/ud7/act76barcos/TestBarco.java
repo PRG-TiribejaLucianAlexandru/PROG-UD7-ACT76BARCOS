@@ -11,21 +11,17 @@ package prog.ud7.act76barcos;
 public class TestBarco {
 
     public static void main(String[] args) {
-        Barco barco1 = new Barco(TipoBarco.BARCO, "La molinera", "XXXX", 2005, new Data());
         BarcoDeGuerra barco2 = new BarcoDeGuerra("Arrasator", "YYYYY", 2017, new Data(), 0, 5, "Lanza torpedos", null);
         BarcoDePesca barco3 = new BarcoDePesca("Faenero", "ZZZZZ", 2001, new Data(), 100, 40);
 
-        System.out.println(barco1.toString());
         System.out.println(barco2.toString());
         System.out.println(barco3.toString());
 
-        barco1.realizarMantenimiento();
         barco2.realizarMantenimiento();
         barco2.realizarMantenimiento();
         barco3.realizarMantenimiento();
         barco3.realizarMantenimiento();
 
-        System.out.println(barco1.toString());
         System.out.println(barco2.toString());
         System.out.println(barco3.toString());
 

@@ -8,7 +8,7 @@ package prog.ud7.act76barcos;
  *
  * @author batoi
  */
-public class Barco {
+public abstract class Barco {
    protected TipoBarco tipo;
    protected String nombre;
    protected String matricula;
